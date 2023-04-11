@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<div  style="position: absolute;
+    top: 5%;
+    left: 30%;";bgcolor="#f0f0f0">
+    <div  style="margin-left:15%"><h1>Word Prediction App</h1>
+    <h3 style="font-size:15px">Data Science Project - Natural Language Processing</h3>
+</div>
+    
+
+    <form method="POST" action="{% url 'estimate'%}">
+        {% csrf_token %}
+    <div class="mb-1" style="align=left margin: 2rem;">
+        <h5 for="usernameValidate">Enter words here: </h5>
+        <input type="text" class="form-outline w-50" id="text"name='text' value="{{text}}" >
+        <br>
+        <label> Note : Only English words are supported</label>
+
+        <h5 class="my-1 me-2" for="state">Prediction word:</h5>
+        <input type="text"  class="form-outline w-75" id="word"name='word' value="{{data}}" >
+        <br><br> <h5>How to use:</h5>
+        <label>Type words of any lenght in the first box above. The prediction box automatically returns a sggestion for the next 
+            word everytime a user input a word.<br> Check out the About tab page for more information about the project.
+        </label>
+    </div>
+   
+ 
+ 
+<input  type="submit" class="btn btn-primary" value='Submit'/>
+</form>
+<br>
+
+</div>
+</div>
+</body>
+</html>
